@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "LSEO Page Inspector",
+  "version": "1.0.0",
+  "description": "A focused on-page SEO audit for the tab you are viewing.",
+  "permissions": ["activeTab", "scripting"],
+  "action": {
+    "default_title": "Inspect page with LSEO",
+    "default_popup": "popup.html"
+  }
+}

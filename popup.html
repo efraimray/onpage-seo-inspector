@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LSEO Page Inspector</title>
+  <link rel="stylesheet" href="popup.css">
+  <script src="popup.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#overview" aria-label="LSEO Page Inspector home">
+      <span class="brand-mark" aria-hidden="true">L</span>
+      <span>LSEO <span class="brand-light">INSPECTOR</span></span>
+    </a>
+    <span class="live-label"><span class="live-dot"></span> PAGE AUDIT</span>
+  </header>
+
+  <main>
+    <section class="page-summary" aria-labelledby="page-title">
+      <p class="eyebrow">CURRENT PAGE</p>
+      <h1 id="page-title">Ready when you are</h1>
+      <p class="page-url" id="page-url">Run an audit to inspect this tab.</p>
+      <div class="summary-bottom">
+        <div class="score-wrap" aria-live="polite">
+          <span class="score" id="score">--</span>
+          <span class="score-caption">SEO<br>signals</span>
+        </div>
+        <button class="audit-button" id="audit-button" type="button">
+          <span aria-hidden="true">↻</span> Audit page
+        </button>
+      </div>
+      <p class="audit-status" id="audit-status" role="status">Only this page is inspected. Nothing is sent anywhere.</p>
+    </section>
+
+    <nav class="tabs" aria-label="Audit sections" role="tablist">
+      <button class="tab is-active" type="button" role="tab" aria-selected="true" data-tab="overview">Overview</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" data-tab="content">Content</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" data-tab="links">Links</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" data-tab="media">Media</button>
+    </nav>
+
+    <section class="tab-panel is-visible" id="panel-overview" role="tabpanel" aria-label="Overview">
+      <div class="section-heading"><h2>Search appearance</h2><span id="meta-status" class="section-note">Awaiting audit</span></div>
+      <div class="result-list" id="appearance-results"></div>
+      <div class="section-heading secondary-heading"><h2>Social metadata</h2></div>
+      <div class="result-list" id="social-results"></div>
+      <div class="section-heading secondary-heading"><h2>Technical</h2></div>
+      <div class="result-list" id="technical-results"></div>
+      <div class="section-heading secondary-heading"><h2>Structured data</h2></div>
+      <div class="result-list" id="schema-results"></div>
+    </section>
+
+    <section class="tab-panel" id="panel-content" role="tabpanel" aria-label="Content" hidden>
+      <div class="section-heading"><h2>Heading structure</h2><span id="heading-count" class="section-note">0 headings</span></div>
+      <div class="detail-list" id="heading-results"></div>
+    </section>
+
+    <section class="tab-panel" id="panel-links" role="tabpanel" aria-label="Links" hidden>
+      <div class="section-heading"><h2>Link profile</h2><span id="link-count" class="section-note">0 links</span></div>
+      <div class="metric-grid" id="link-metrics"></div>
+      <div class="section-heading secondary-heading"><h2>Link sample</h2></div>
+      <div class="detail-list" id="link-results"></div>
+    </section>
+
+    <section class="tab-panel" id="panel-media" role="tabpanel" aria-label="Media" hidden>
+      <div class="section-heading"><h2>Image coverage</h2><span id="image-count" class="section-note">0 images</span></div>
+      <div class="metric-grid" id="image-metrics"></div>
+      <div class="section-heading secondary-heading"><h2>Image sample</h2></div>
+      <div class="detail-list" id="image-results"></div>
+    </section>
+
+    <footer class="footer"><span>LOCAL PAGE INSPECTION</span><span id="updated-at">No audit yet</span></footer>
+  </main>
+</body>
+</html>
